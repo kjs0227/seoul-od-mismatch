@@ -1,5 +1,3 @@
-﻿# seoul-od-mismatch
-
 # seoul-od-mismatch
 
 This repository contains the reproducibility code for the paper:
