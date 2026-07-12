@@ -112,4 +112,23 @@ Please cite the associated paper when using this code in academic work.
 
 ## License
 
-The source code is released under the license included in the `LICENSE` file. The license does not apply to the original or processed HTS and LCS datasets.
+The source code developed for this repository is licensed under the MIT License. See `LICENSE` for details.
+
+This includes the independently implemented code for:
+
+* HTS preprocessing and population expansion;
+* LCS preprocessing and average-flow construction;
+* OD-matrix construction;
+* distributional mismatch indicators;
+* regression analyses; and
+* gravity-model estimation, IPF calibration, and model evaluation.
+
+The MIT License applies only to the source code and documentation developed for this repository. It does not apply to:
+
+* the original HTS data;
+* the original LCS data;
+* processed person-level or trip-level records;
+* derived OD matrices; or
+* other third-party datasets and software dependencies.
+
+External academic publications and code repositories that informed the methodological development are cited as references but are not redistributed as part of this repository.
