@@ -23,7 +23,7 @@ The study compares origin–destination (OD) travel patterns derived from the 20
 #### Datasets
 
 * **Household Travel Survey (HTS):** The 2021 household travel survey provided through the Korea Transport Database (KTDB).
-* **LTE/5G Cellular Signaling (LCS) Data:** The Seoul Life Movement Data provided by the Seoul Metropolitan Government.
+* **LTE/5G Cellular Signaling (LCS) Data:** [The Seoul Life Movement Data provided by the Seoul Metropolitan Government.](https://data.seoul.go.kr/dataVisual/seoul/seoulLivingMigration.do)
 
 The original datasets are not included in this repository. Processed person-level records, trip-level records, and derived OD matrices are also not redistributed because they are subject to the respective providers’ access requirements and data-use conditions.
 
@@ -33,17 +33,33 @@ Users must obtain the source data independently and update the local file paths 
 
 ##### `01_HTS_preprocessing_and_expansion.ipynb`
 
-* Preprocesses the HTS person and trip records.
-* Identifies trips whose origins and destinations are both located within Seoul.
-* Applies person-level population expansion.
-* Constructs analysis-ready HTS OD tables.
+* Preprocesses respondent-level HTS person and trip records and retains trips with both origins and destinations within Seoul.
+* Derives person-level expansion coefficients based on residential location, gender, and age group.
+* Applies each coefficient to all intra-Seoul trips reported by the respondent to construct population-equivalent HTS OD flows.
 
 ##### `02_LCS_preprocessing_and_averaging.ipynb`
 
-* Preprocesses the hourly LCS files.
-* Extracts travel flows with origins and destinations within Seoul.
-* Constructs average-Thursday travel flows.
-* Produces analysis-ready LCS OD tables aligned with the HTS geography.
+* Preprocesses the released hourly LCS OD flows and retains trips with both origins and destinations within Seoul.
+* Harmonizes age, gender, travel type, and arrival-time classifications with the HTS data.
+* Averages flows across the four Thursdays in October 2021 to construct representative Thursday LCS OD flows.
+
+##### `03_Mismatches_in_OD_Trip_Distributions.ipynb`
+
+* Compares HTS and LCS OD trip distributions across subgroups defined by gender, age, travel type, and arrival time.
+* Computes standardized root mean square error (SRMSE) to quantify distributional mismatches between the two datasets.
+* Computes zero-cell indicators to characterize the sparsity and overlap of observed OD coverage.
+
+##### `04_Data_construction_and_regression.ipynb`
+
+* Constructs the origin-level analytical dataset by linking Origin-SRMSE with spatial, socioeconomic, and survey attributes.
+* Applies principal component analysis (PCA) to the four land-use proportions to derive a composite indicator of land-use composition.
+* Estimates an OLS regression model to examine associations between origin-level mismatches and the explanatory variables.
+
+##### `05_Gravity_model_analysis.ipynb`
+
+* Identifies the common set of interzonal OD pairs with non-zero flows in both HTS and LCS.
+* Estimates comparable log-linear gravity-type trip distribution models using origin and destination totals and average OD travel time.
+* Applies iterative proportional fitting (IPF) to the predicted OD matrices and evaluates model performance using R² and the common part of commuters (CPC).
 
 ## Notice
 
