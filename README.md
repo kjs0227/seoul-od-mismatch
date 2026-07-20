@@ -55,7 +55,7 @@ Users must obtain the source data independently and update the local file paths 
 * Applies principal component analysis (PCA) to the four land-use proportions to derive a composite indicator of land-use composition.
 * Estimates an OLS regression model to examine associations between origin-level mismatches and the explanatory variables.
 
-##### `05_Gravity_model_analysis.ipynb`
+##### `05_Gravity_modeling_and_IPF.ipynb`
 
 * Identifies the common set of interzonal OD pairs with non-zero flows in both HTS and LCS.
 * Estimates comparable log-linear gravity-type trip distribution models using origin and destination totals and average OD travel time.
