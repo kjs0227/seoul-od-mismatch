@@ -1,4 +1,4 @@
-# notebooks
+# Notebooks
 
 This directory contains the Jupyter notebooks used to preprocess the HTS and LCS datasets, construct aligned OD matrices, and reproduce the distributional mismatch, regression, and gravity-model analyses reported in the paper.
 
