@@ -4,7 +4,7 @@ This directory contains:
 
 * `HTS_sample.csv`: unprocessed sample records preserving the structure of the original HTS data;
 * `LCS_sample.csv`: unprocessed sample records preserving the structure of the original hourly LCS data;
-* `administrative_districts_2016_2021.xlsx`: administrative district identifiers used to harmonize spatial units across the study period;
+* `administrative_districts (2016-2021).xlsx`: administrative district identifiers used to harmonize spatial units across the study period;
 * `202110_gender_age_population_Korea.xlsx`: nationwide population counts by age in October 2021;
 * `202110_gender_age_population_Seoul.xlsx`: population counts by age for Seoul in October 2021; and
 * `Regression_input.csv`: TAZ-level spatial, socioeconomic, and survey attributes used in the regression analysis.
